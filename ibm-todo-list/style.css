@@ -1,0 +1,215 @@
+/* General Page Style */
+body {
+  font-family: 'Montserrat', sans-serif; /* A more modern font for elegance */
+  background-image: url('./assets/batman-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to allow content to grow */
+  margin: 0;
+  color: #e0e0e0;
+}
+
+/* Container */
+.container {
+  background: rgba(30, 30, 30, 0.95); /* Slightly less transparent for better readability */
+  padding: 35px 45px; /* Increased padding */
+  border-radius: 18px; /* More rounded */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7); /* Stronger, deeper shadow */
+  width: 480px; /* Slightly wider */
+  max-width: 90%; /* Responsive max-width */
+  text-align: center;
+  border: 1px solid rgba(70, 70, 70, 0.6); /* Slightly more prominent border */
+}
+
+/* Heading */
+h1 {
+  color: #0099ff; /* Brighter, more vibrant blue */
+  margin-bottom: 30px; /* Increased margin */
+  text-shadow: 0 0 10px rgba(0, 153, 255, 0.8); /* More intense glow */
+  font-size: 2.2em; /* Slightly larger heading */
+  letter-spacing: 1.5px; /* Spaced out letters for style */
+}
+
+/* Task Input */
+.task-input {
+  display: flex;
+  margin-bottom: 30px; /* Increased margin */
+}
+
+.task-input input {
+  flex: 1;
+  padding: 14px; /* Increased padding */
+  border: 1px solid #555; /* Darker border */
+  border-radius: 10px 0 0 10px; /* More rounded input corners */
+  outline: none;
+  background-color: #1f1f1f; /* Even darker input field */
+  color: #e0e0e0;
+  font-size: 1.1em; /* Slightly larger font */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+.task-input input:focus {
+  border-color: #0099ff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 153, 255, 0.5); /* Blue glow on focus */
+}
+
+.task-input input::placeholder {
+  color: #a0a0a0; /* Lighter placeholder text */
+}
+
+.task-input button {
+  background-color: #0099ff; /* Vibrant blue for the add button */
+  color: white;
+  border: none;
+  padding: 14px 25px; /* Adjusted padding */
+  border-radius: 0 10px 10px 0; /* More rounded button corners */
+  cursor: pointer;
+  font-size: 1.2em; /* Larger icon */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition and slight scale on hover */
+}
+
+.task-input button:hover {
+  background-color: #007bbd; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #2a2a2a; /* Darker background for list items */
+  padding: 15px 18px; /* Increased padding */
+  margin-bottom: 12px; /* Increased margin */
+  border-radius: 10px; /* More rounded */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid transparent; /* Thicker left border */
+}
+
+.task-list li:hover {
+  background-color: #3f3f3f; /* Slightly lighter on hover */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Subtle shadow on hover */
+}
+
+/* Task Text (for editing) */
+.task-list li span {
+  flex-grow: 1; /* Allows text to take available space */
+  text-align: left;
+  font-size: 1.1em;
+  padding-right: 10px; /* Space from buttons */
+  word-break: break-word; /* Prevents long words from overflowing */
+  cursor: text; /* Indicates text is editable */
+}
+
+.task-list li span:focus {
+  outline: 1px dashed #0099ff; /* Dashed blue outline on edit focus */
+  background-color: #3a3a3a;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+/* Timestamp */
+.task-list li .timestamp {
+    align-self: flex-end;
+    margin-left: auto;
+    font-size: 0.75em;
+    color: #888;
+    opacity: 0.7;
+    padding-top: 6px;
+}
+
+
+/* Completed Task */
+.task-list li.completed {
+  border-left-color: #0099ff; /* Brighter blue indicator */
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #888; /* Grayer text for completed tasks */
+  font-style: italic; /* Italicize completed tasks */
+}
+
+/* Action Buttons */
+.task-list .actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-list button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.3em; /* Larger icons for action buttons */
+  margin-left: 10px;
+  color: #999; /* Muted gray for default icons */
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition and slight scale on hover */
+  padding: 5px; /* Add padding for easier clicking */
+  border-radius: 5px; /* Slightly rounded for click area */
+}
+
+.task-list button:hover {
+  transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+.task-list button.complete {
+  color: #28a745; /* Green for check icon (if not completed) */
+}
+
+.task-list li.completed button.complete {
+  color: #0099ff; /* Brighter blue for completed tick */
+}
+
+.task-list button.delete {
+  color: #dc3545; /* Red for delete icon */
+}
+
+.task-list button.edit {
+  color: #ffc107; /* Yellow for edit icon */
+}
+
+.task-list button:hover:not(.complete):not(.delete) { /* General hover for other buttons */
+    color: #e0e0e0;
+}
+.task-list button.complete:hover {
+    color: #39cc5a; /* Brighter green on hover */
+}
+.task-list button.delete:hover {
+    color: #e74c3c; /* Brighter red on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+    width: 95%;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  .task-input input, .task-input button {
+    padding: 12px;
+    font-size: 1em;
+  }
+  .task-list li {
+    padding: 12px 15px;
+    font-size: 0.95em;
+  }
+  .task-list button {
+    font-size: 1.1em;
+    margin-left: 5px;
+  }
+}
